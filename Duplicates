@@ -1,0 +1,43 @@
+public class DuplicateFinding {
+
+    public static void main(String[] args) {
+
+        String[] str = {"Vinod", "Kumar", "gubba", "kumar"};
+        duplicate(str);
+    }
+
+    static void duplicate(String[] str) {
+        HashSet<String> hs = new HashSet<String>();
+        for (String st: str) {
+            for(String st2 : str)
+                if (st.equals(st2)) {
+                    System.out.println("Contains Duplicate elements");
+                    return;
+                }
+        }
+    }
+}
+
+
+/*
+Both Time and space complexity is O(n)
+*/
+
+public class DuplicateFinding {
+
+    public static void main(String[] args) {
+
+        String[] str = {"Vinod", "Kumar", "gubba", "kumar"};
+        duplicate(str);
+    }
+
+    static void duplicate(String[] str) {
+        HashSet<String> hs = new HashSet<String>();
+        for (String st: str) {
+            if (!hs.add(st)) {
+              System.out.println("Contains Duplicate elements");
+              return;
+            }
+        }
+    }
+}
